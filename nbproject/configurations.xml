@@ -19,6 +19,7 @@
       <itemPath>ADG731_2.h</itemPath>
       <itemPath>ADG731_3.h</itemPath>
       <itemPath>ADG731_4.h</itemPath>
+      <itemPath>digitizer.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -42,6 +43,7 @@
       <itemPath>ADG731_2.c</itemPath>
       <itemPath>ADG731_3.c</itemPath>
       <itemPath>ADG731_4.c</itemPath>
+      <itemPath>digitizer.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

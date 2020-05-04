@@ -78,11 +78,8 @@ void SYSTEM_Initialize(void){
     pinManagerInitialize();                                                     // Initialize I/O
     interruptInitialize();                                                      // Initialize interrupt controller
     promInitialize();                                                           // Initialize PROM
-//    adcInitialize();                                                            // Initialize ADC
-    ddsInitialize();                                                            // Initialize DDS
-//    extInt2Initialize();                                                        // Initialize external interrupt 2
-//    muxInitialize();                                                            // Initialize mux
-//    sw1Initialize();                                                            // Initialize switch 1
+    digiInitialize();                                                           // Initialize digitizer
+    extInt2Initialize();                                                        // Initialize external interrupt 2    
     tmr1Initialize();                                                           // Initialize timer 1
     uart2Initialize();                                                          // Initialize UART2
 }//end SYSTEM_Initialize()

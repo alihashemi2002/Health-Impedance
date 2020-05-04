@@ -6,7 +6,7 @@
 
 /*** extInt2Interrupt *************************************************************************************************************/        
 void __ISR(_EXTERNAL_2_VECTOR, IPL7AUTO) extInt2Interrupt(void){
-    adcService();                                                               // Service ADC
+    digiService();                                                              // Service digitizer
     extInt2FlagClr();                                                           // Clear IRQ flag
 }//end extInt2Interrupt()
 

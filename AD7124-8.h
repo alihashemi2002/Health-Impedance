@@ -144,6 +144,8 @@ typedef struct{
     uint8_t   crntCh;                                                           // Current channel being converted
     adcCh_obj ch[adcMaxChIndex()];                                              // Channel variables
     bool      statusEn;                                                         // Status byte enabled flag
+    uint8_t   setBytes;                                                         // Number of setup bytes
+    bool      initDone;                                                         // Initialization done flag
 } adc_obj;
 
 typedef struct{

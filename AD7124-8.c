@@ -57,6 +57,7 @@ void adcInitialize(void){
     
     adcWrReg(adcAddrControl(),  adcControlDflt());                              // Write control register default and start sampling
     
+    adc.setBytes = ((uint8_t)(adc.txEnd - adc.txStart));                        // Record number of setup bytes
     adcSpiOpenFrame();                                                          // Open SPI frame
 }//end adcInitialize()
 
@@ -727,6 +728,8 @@ void adcService(void){
         adcSpiOpenFrame();
         adcSpiToMirrorReg();                                                    // SPI RX FIFO -> corresponding mirror / buffer
     }//end else if
+    if(!adc.initDone){if(adc.txStart > adc.setBytes) adc.initDone = true;}      // Check if all setup bytes have been written--set flag
+        
 }//end adcService()
 
 /*** adcCopyRxBuf *****************************************************************************************************************/

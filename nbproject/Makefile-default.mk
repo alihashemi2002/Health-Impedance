@@ -30,12 +30,12 @@ ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 IMAGE_TYPE=debug
 OUTPUT_SUFFIX=elf
 DEBUGGABLE_SUFFIX=elf
-FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/IMPEDANCE_REV000.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/Health-Wearable-Wrist.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 else
 IMAGE_TYPE=production
 OUTPUT_SUFFIX=hex
 DEBUGGABLE_SUFFIX=elf
-FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/IMPEDANCE_REV000.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/Health-Wearable-Wrist.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 endif
 
 ifeq ($(COMPARE_BUILD), true)
@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=25AA640AT.c extInt.c interrupt_manager.c main.c pin_manager.c system.c tmr1.c uart2.c AD7124-8.c AD9833.c ADG704.c ADG731_1.c ADG731_2.c ADG731_3.c ADG731_4.c
+SOURCEFILES_QUOTED_IF_SPACED=25AA640AT.c extInt.c interrupt_manager.c main.c pin_manager.c system.c tmr1.c uart2.c AD7124-8.c AD9833.c ADG704.c ADG731_1.c ADG731_2.c ADG731_3.c ADG731_4.c digitizer.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/25AA640AT.o ${OBJECTDIR}/extInt.o ${OBJECTDIR}/interrupt_manager.o ${OBJECTDIR}/main.o ${OBJECTDIR}/pin_manager.o ${OBJECTDIR}/system.o ${OBJECTDIR}/tmr1.o ${OBJECTDIR}/uart2.o ${OBJECTDIR}/AD7124-8.o ${OBJECTDIR}/AD9833.o ${OBJECTDIR}/ADG704.o ${OBJECTDIR}/ADG731_1.o ${OBJECTDIR}/ADG731_2.o ${OBJECTDIR}/ADG731_3.o ${OBJECTDIR}/ADG731_4.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/25AA640AT.o.d ${OBJECTDIR}/extInt.o.d ${OBJECTDIR}/interrupt_manager.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/pin_manager.o.d ${OBJECTDIR}/system.o.d ${OBJECTDIR}/tmr1.o.d ${OBJECTDIR}/uart2.o.d ${OBJECTDIR}/AD7124-8.o.d ${OBJECTDIR}/AD9833.o.d ${OBJECTDIR}/ADG704.o.d ${OBJECTDIR}/ADG731_1.o.d ${OBJECTDIR}/ADG731_2.o.d ${OBJECTDIR}/ADG731_3.o.d ${OBJECTDIR}/ADG731_4.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/25AA640AT.o ${OBJECTDIR}/extInt.o ${OBJECTDIR}/interrupt_manager.o ${OBJECTDIR}/main.o ${OBJECTDIR}/pin_manager.o ${OBJECTDIR}/system.o ${OBJECTDIR}/tmr1.o ${OBJECTDIR}/uart2.o ${OBJECTDIR}/AD7124-8.o ${OBJECTDIR}/AD9833.o ${OBJECTDIR}/ADG704.o ${OBJECTDIR}/ADG731_1.o ${OBJECTDIR}/ADG731_2.o ${OBJECTDIR}/ADG731_3.o ${OBJECTDIR}/ADG731_4.o ${OBJECTDIR}/digitizer.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/25AA640AT.o.d ${OBJECTDIR}/extInt.o.d ${OBJECTDIR}/interrupt_manager.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/pin_manager.o.d ${OBJECTDIR}/system.o.d ${OBJECTDIR}/tmr1.o.d ${OBJECTDIR}/uart2.o.d ${OBJECTDIR}/AD7124-8.o.d ${OBJECTDIR}/AD9833.o.d ${OBJECTDIR}/ADG704.o.d ${OBJECTDIR}/ADG731_1.o.d ${OBJECTDIR}/ADG731_2.o.d ${OBJECTDIR}/ADG731_3.o.d ${OBJECTDIR}/ADG731_4.o.d ${OBJECTDIR}/digitizer.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/25AA640AT.o ${OBJECTDIR}/extInt.o ${OBJECTDIR}/interrupt_manager.o ${OBJECTDIR}/main.o ${OBJECTDIR}/pin_manager.o ${OBJECTDIR}/system.o ${OBJECTDIR}/tmr1.o ${OBJECTDIR}/uart2.o ${OBJECTDIR}/AD7124-8.o ${OBJECTDIR}/AD9833.o ${OBJECTDIR}/ADG704.o ${OBJECTDIR}/ADG731_1.o ${OBJECTDIR}/ADG731_2.o ${OBJECTDIR}/ADG731_3.o ${OBJECTDIR}/ADG731_4.o
+OBJECTFILES=${OBJECTDIR}/25AA640AT.o ${OBJECTDIR}/extInt.o ${OBJECTDIR}/interrupt_manager.o ${OBJECTDIR}/main.o ${OBJECTDIR}/pin_manager.o ${OBJECTDIR}/system.o ${OBJECTDIR}/tmr1.o ${OBJECTDIR}/uart2.o ${OBJECTDIR}/AD7124-8.o ${OBJECTDIR}/AD9833.o ${OBJECTDIR}/ADG704.o ${OBJECTDIR}/ADG731_1.o ${OBJECTDIR}/ADG731_2.o ${OBJECTDIR}/ADG731_3.o ${OBJECTDIR}/ADG731_4.o ${OBJECTDIR}/digitizer.o
 
 # Source Files
-SOURCEFILES=25AA640AT.c extInt.c interrupt_manager.c main.c pin_manager.c system.c tmr1.c uart2.c AD7124-8.c AD9833.c ADG704.c ADG731_1.c ADG731_2.c ADG731_3.c ADG731_4.c
+SOURCEFILES=25AA640AT.c extInt.c interrupt_manager.c main.c pin_manager.c system.c tmr1.c uart2.c AD7124-8.c AD9833.c ADG704.c ADG731_1.c ADG731_2.c ADG731_3.c ADG731_4.c digitizer.c
 
 
 
@@ -88,7 +88,7 @@ FIXDEPS=fixDeps
 ifneq ($(INFORMATION_MESSAGE), )
 	@echo $(INFORMATION_MESSAGE)
 endif
-	${MAKE}  -f nbproject/Makefile-default.mk dist/${CND_CONF}/${IMAGE_TYPE}/IMPEDANCE_REV000.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+	${MAKE}  -f nbproject/Makefile-default.mk dist/${CND_CONF}/${IMAGE_TYPE}/Health-Wearable-Wrist.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 
 MP_PROCESSOR_OPTION=32MZ1024EFK100
 MP_LINKER_FILE_OPTION=
@@ -197,6 +197,12 @@ ${OBJECTDIR}/ADG731_4.o: ADG731_4.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/ADG731_4.o 
 	@${FIXDEPS} "${OBJECTDIR}/ADG731_4.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/ADG731_4.o.d" -o ${OBJECTDIR}/ADG731_4.o ADG731_4.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
 	
+${OBJECTDIR}/digitizer.o: digitizer.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/digitizer.o.d 
+	@${RM} ${OBJECTDIR}/digitizer.o 
+	@${FIXDEPS} "${OBJECTDIR}/digitizer.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/digitizer.o.d" -o ${OBJECTDIR}/digitizer.o digitizer.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
+	
 else
 ${OBJECTDIR}/25AA640AT.o: 25AA640AT.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -288,6 +294,12 @@ ${OBJECTDIR}/ADG731_4.o: ADG731_4.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/ADG731_4.o 
 	@${FIXDEPS} "${OBJECTDIR}/ADG731_4.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/ADG731_4.o.d" -o ${OBJECTDIR}/ADG731_4.o ADG731_4.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
 	
+${OBJECTDIR}/digitizer.o: digitizer.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/digitizer.o.d 
+	@${RM} ${OBJECTDIR}/digitizer.o 
+	@${FIXDEPS} "${OBJECTDIR}/digitizer.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/digitizer.o.d" -o ${OBJECTDIR}/digitizer.o digitizer.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp=${DFP_DIR}
+	
 endif
 
 # ------------------------------------------------------------------------------------
@@ -299,15 +311,15 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: link
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-dist/${CND_CONF}/${IMAGE_TYPE}/IMPEDANCE_REV000.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
+dist/${CND_CONF}/${IMAGE_TYPE}/Health-Wearable-Wrist.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE) -g -mdebugger -D__MPLAB_DEBUGGER_ICD3=1 -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/IMPEDANCE_REV000.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}          -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)   -mreserve=data@0x0:0x37F   -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,-D=__DEBUG_D,--defsym=__MPLAB_DEBUGGER_ICD3=1,--no-code-in-dinit,--no-dinit-in-serial-mem,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml -mdfp=${DFP_DIR}
+	${MP_CC} $(MP_EXTRA_LD_PRE) -g -mdebugger -D__MPLAB_DEBUGGER_ICD3=1 -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/Health-Wearable-Wrist.${IMAGE_TYPE}.${OUTPUT_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}          -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)   -mreserve=data@0x0:0x37F   -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,-D=__DEBUG_D,--defsym=__MPLAB_DEBUGGER_ICD3=1,--no-code-in-dinit,--no-dinit-in-serial-mem,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml -mdfp=${DFP_DIR}
 	
 else
-dist/${CND_CONF}/${IMAGE_TYPE}/IMPEDANCE_REV000.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
+dist/${CND_CONF}/${IMAGE_TYPE}/Health-Wearable-Wrist.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE)  -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/IMPEDANCE_REV000.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}          -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--no-code-in-dinit,--no-dinit-in-serial-mem,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml -mdfp=${DFP_DIR}
-	${MP_CC_DIR}\\xc32-bin2hex dist/${CND_CONF}/${IMAGE_TYPE}/IMPEDANCE_REV000.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} 
+	${MP_CC} $(MP_EXTRA_LD_PRE)  -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/Health-Wearable-Wrist.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}          -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--no-code-in-dinit,--no-dinit-in-serial-mem,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml -mdfp=${DFP_DIR}
+	${MP_CC_DIR}\\xc32-bin2hex dist/${CND_CONF}/${IMAGE_TYPE}/Health-Wearable-Wrist.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} 
 endif
 
 
